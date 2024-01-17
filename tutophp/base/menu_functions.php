@@ -2,7 +2,7 @@
 if (!function_exists('nav_item')) {
 
 
-  function nav_item (string $lien, string $titre, string $linkClass = ''): string 
+  function nav_item(string $lien, string $titre, string $linkClass = ''): string
   {
     $class = 'nav-item';
     if ($_SERVER['SCRIPT_NAME'] === $lien) {
@@ -15,4 +15,3 @@ if (!function_exists('nav_item')) {
 HTML;
   }
 }
-?>
