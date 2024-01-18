@@ -1,15 +1,15 @@
 <?php
 date_default_timezone_set('Europe/Paris');
-require_once 'form_functions.php';
+require_once 'functions/form_functions.php';
 $title = 'Nous contacter';
 $nav = 'contact';
-require_once 'config.php';
+require_once 'functions/config.php';
 $heure = (int)($_GET['heure'] ?? date('G'));
 $jour = (int)($_GET['jour'] ?? date('N') - 1);
 $creneaux = CRENEAUX[date('N') - 1];
 $ouvert = in_creneaux($heure, $creneaux);
 $color = $ouvert ? "green" : "red";
-require 'header.php';
+require 'elements/header.php';
 ?>
 
 <div class="row">
@@ -55,4 +55,4 @@ require 'header.php';
   </div>
 </div>
 
-<?php require 'footer.php' ?>
+<?php require 'elements/footer.php' ?>
