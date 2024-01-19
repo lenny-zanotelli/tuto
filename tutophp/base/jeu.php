@@ -46,7 +46,6 @@ foreach (['parfum', 'supplement', 'cornet'] as $name) {
     }
   }
 }
-dump($ingredients);
 
 require 'elements/header.php';
 ?>
@@ -109,20 +108,5 @@ require 'elements/header.php';
 
   </div>
 </div>
-
-
-<h2>$_GET</h2>
-<pre>
-  <?php
-  var_dump($_GET)
-  ?>
-  </pre>
-<h2>$_POST</h2>
-<pre>
-  <?php
-  var_dump($_POST);
-  ?>
-</pre>
-
 
 <?php require 'elements/footer.php'; ?>

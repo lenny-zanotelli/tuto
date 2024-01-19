@@ -7,6 +7,7 @@ if (!function_exists('nav_menu')) {
     return
       nav_item('/index.php', 'Accueil', $linkClass) .
       nav_item('/contact.php', 'Contact', $linkClass) .
-      nav_item('/jeu.php', 'Jeu', $linkClass);
+      nav_item('/jeu.php', 'Jeu', $linkClass) .
+      nav_item('/login.php', 'Se connecter', $linkClass);
   }
 }

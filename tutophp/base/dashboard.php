@@ -1,4 +1,6 @@
 <?php
+require_once 'functions/auth_functions.php';
+forcer_utilisateur_connecte();
 require_once 'functions/compteur_functions.php';
 $annee = (int) date('Y');
 $annee_selected = empty($_GET['annee']) ? null : (int) $_GET['annee'];
@@ -28,7 +30,7 @@ require 'elements/header.php';
 
 <div class="row">
   <div class="col-md-8">
-    <div class="col-sm-4 list-group">
+    <div class="col-md-4 list-group">
       <?php for ($i = 0; $i < 5; $i++) : ?>
         <a href="dashboard.php?annee=<?= $annee - $i ?>" class="list-group-item <?= $annee - $i === $annee_selected ? 'active' : '' ?>">
           <?= $annee - $i ?>
@@ -43,7 +45,7 @@ require 'elements/header.php';
       <?php endfor; ?>
 
     </div>
-    <div class="col-sm-4">
+    <div class="col-md-4">
       <div class="card">
         <div class="card-body">
           <strong style="font-size: 2em;"> <?= $total_vues ?></strong> <br>
