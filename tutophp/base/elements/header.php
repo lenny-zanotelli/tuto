@@ -39,4 +39,4 @@
     </div>
   </nav>
 
-  <main role="main" class="container">
+  <main class="container">
