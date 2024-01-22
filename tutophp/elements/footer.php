@@ -1,14 +1,14 @@
-<?php
-require_once 'functions/compteur_functions.php';
-?>
 </main><!-- /.container -->
 
 <div class="row">
   <div class="col-md-4">
     <?php
-    ajouter_vue()
+    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . 'DoubleCompteur.php';
+    $compteur = new DoubleCompteur(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'compteur');
+    $compteur->incrementer();
+    $vues = $compteur->recuperer();
     ?>
-    Il y a <?= nombre_vues() ?> visites sur le site.
+    Il y a <?= $vues ?> visites sur le site.
   </div>
   <div class="col-md-4"></div>
   <div class="col-md-4"></div>
