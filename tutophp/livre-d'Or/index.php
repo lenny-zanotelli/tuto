@@ -1,4 +1,6 @@
 <?php
+phpinfo();
+die();
 require_once 'class/Message.php';
 require_once 'class/GuestBook.php';
 $guestBook = new GuestBook(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'messages');

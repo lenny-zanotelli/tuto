@@ -7,12 +7,26 @@ class Message
   private $message;
   private $date;
 
+  /**
+   * fromJSON
+   *
+   * @param  mixed $json
+   * @return Message
+   */
   public static function fromJSON(string $json): Message
   {
     $data = json_decode($json, true);
     return new self($data['username'], $data['message'], new DateTime("@" . $data['date']));
   }
 
+  /**
+   * __construct
+   *
+   * @param  mixed $username
+   * @param  mixed $message
+   * @param  mixed $date
+   * @return void
+   */
   public function __construct(string $username, string $message, ?DateTime $date = null)
   {
     $this->username = $username;
@@ -20,11 +34,21 @@ class Message
     $this->date = $date ?: new DateTime();
   }
 
+  /**
+   * Renvoit un booléen si le message enregistrer est validde
+   *
+   * @return bool
+   */
   public function isValid(): bool
   {
     return empty($this->getErrors());
   }
 
+  /**
+   * Validation des messages et pseudonymes
+   *
+   * @return array
+   */
   public function getErrors(): array
   {
     $errors = [];
@@ -37,6 +61,11 @@ class Message
     return $errors;
   }
 
+  /**
+   * toHTML
+   *
+   * @return string
+   */
   public function toHTML(): string
   {
     $username = htmlentities($this->username);
@@ -45,6 +74,11 @@ class Message
     return '<p><strong>' . $username . '</strong> <em>le ' . $date . '</em> <br>' . $message . '</p>';
   }
 
+  /**
+   * toJSON
+   *
+   * @return string
+   */
   public function toJSON(): string
   {
     return json_encode([
