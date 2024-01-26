@@ -1,0 +1,15 @@
+{
+    "name": "torigon/tutophp",
+    "autoload": {
+        "psr-4": {
+            "Torigon\\Tutophp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lenny-zanotelli",
+            "email": "lenny.zanotelli24@gmail.com"
+        }
+    ],
+    "require": {}
+}
